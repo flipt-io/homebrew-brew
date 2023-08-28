@@ -8,7 +8,7 @@ class Cup < Formula
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", "./cmd/cup/...", *std_go_args(ldflags: "-s -w")
   end
 
   test do
