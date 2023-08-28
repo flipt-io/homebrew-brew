@@ -2,7 +2,7 @@ class Cup < Formula
   desc "A CLI for communicating with cupd"
   homepage "https://cup.flipt.io"
   license "apache-2.0"
-  head "https://github.com/flipt-io/cup/archive/refs/tags/v0.1.2.tar.gz"
+  url "https://github.com/flipt-io/cup/archive/refs/tags/v0.1.2.tar.gz"
 
   depends_on "go" => :build
 
