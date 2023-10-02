@@ -5,35 +5,47 @@
 class Flipt < Formula
   desc "An open source, self-hosted feature flag solution"
   homepage "https://flipt.io"
-  version "1.27.2"
+  version "1.28.0"
   license "GPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/flipt-io/flipt/releases/download/v1.27.2/flipt_darwin_arm64.tar.gz"
-      sha256 "03e0005ae61945d12bc545c60b32fb9421cc06ddf00fb21f0e7e54cbd22bad7a"
+      url "https://github.com/flipt-io/flipt/releases/download/v1.28.0/flipt_darwin_arm64.tar.gz"
+      sha256 "84990b5f70327d0749d4bfced017e96a1c406b2d89eb2b7bb79f9f736a4315d9"
 
       def install
         bin.install "flipt"
+        output = Utils.popen_read("SHELL=bash #{bin}/flipt completion bash")
+        (bash_completion/"flipt").write output
+        output = Utils.popen_read("SHELL=zsh #{bin}/flipt completion zsh")
+        (zsh_completion/"_flipt").write output
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/flipt-io/flipt/releases/download/v1.27.2/flipt_linux_arm64.tar.gz"
-      sha256 "4cb00e9ef62da3fc3a4b515fc001f1bbedd6a05c5bd00edfa17be2e561e63cd6"
+      url "https://github.com/flipt-io/flipt/releases/download/v1.28.0/flipt_linux_arm64.tar.gz"
+      sha256 "d11f612f071bce923b1a5751a6d87248573fe314a648ec6af548908b032c80bb"
 
       def install
         bin.install "flipt"
+        output = Utils.popen_read("SHELL=bash #{bin}/flipt completion bash")
+        (bash_completion/"flipt").write output
+        output = Utils.popen_read("SHELL=zsh #{bin}/flipt completion zsh")
+        (zsh_completion/"_flipt").write output
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/flipt-io/flipt/releases/download/v1.27.2/flipt_linux_x86_64.tar.gz"
-      sha256 "18a0cde0d9d6822b0dcfef467e3bab79e4fa3aace4b5feef1d159e8c1f27c1b5"
+      url "https://github.com/flipt-io/flipt/releases/download/v1.28.0/flipt_linux_x86_64.tar.gz"
+      sha256 "3fa76d59ab080147ce94239e5af5d328e82a38a2c1d2a09ced571e3f2f57deab"
 
       def install
         bin.install "flipt"
+        output = Utils.popen_read("SHELL=bash #{bin}/flipt completion bash")
+        (bash_completion/"flipt").write output
+        output = Utils.popen_read("SHELL=zsh #{bin}/flipt completion zsh")
+        (zsh_completion/"_flipt").write output
       end
     end
   end
