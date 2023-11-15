@@ -5,13 +5,13 @@
 class Flipt < Formula
   desc "An open source, self-hosted feature flag solution"
   homepage "https://flipt.io"
-  version "1.30.1"
+  version "1.31.0"
   license "GPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/flipt-io/flipt/releases/download/v1.30.1/flipt_darwin_arm64.tar.gz"
-      sha256 "1330b45a7c2f2048237c5ec2cbdeb16cf1b15b00c43a02b9b43ab5b4033874cc"
+      url "https://github.com/flipt-io/flipt/releases/download/v1.31.0/flipt_darwin_arm64.tar.gz"
+      sha256 "1dc126e557a64a57296b76bf4ff1a34a9c48619c309139cfb1421cbc2d20b30d"
 
       def install
         bin.install "flipt"
@@ -25,8 +25,8 @@ class Flipt < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/flipt-io/flipt/releases/download/v1.30.1/flipt_linux_arm64.tar.gz"
-      sha256 "f1039bfb035461aecbd1df75d5371313affe0a377f3dc1471c54c5be48f411c2"
+      url "https://github.com/flipt-io/flipt/releases/download/v1.31.0/flipt_linux_arm64.tar.gz"
+      sha256 "8aad895954e2a7277a430af42701cc41566a69b31e3d98c1a12acadd9137188f"
 
       def install
         bin.install "flipt"
@@ -37,8 +37,8 @@ class Flipt < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/flipt-io/flipt/releases/download/v1.30.1/flipt_linux_x86_64.tar.gz"
-      sha256 "ce5304b16a1850decae5c263df256527fc32a236fc9c00e8a576f830f5fe5f24"
+      url "https://github.com/flipt-io/flipt/releases/download/v1.31.0/flipt_linux_x86_64.tar.gz"
+      sha256 "7eadb206a09b1a10e110d341dc9b1b108c8d585792151b621b67d00632ce8a67"
 
       def install
         bin.install "flipt"
