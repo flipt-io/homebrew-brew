@@ -5,13 +5,13 @@
 class Flipt < Formula
   desc "An open source, self-hosted feature flag solution"
   homepage "https://flipt.io"
-  version "1.39.1"
+  version "1.39.2"
   license "GPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/flipt-io/flipt/releases/download/v1.39.1/flipt_darwin_arm64.tar.gz"
-      sha256 "162b9008a483e1fdbe9e063ac6b2b916bafad6f270238dcc9eb3bef4d930d790"
+      url "https://github.com/flipt-io/flipt/releases/download/v1.39.2/flipt_darwin_arm64.tar.gz"
+      sha256 "7f6c2941239cfa214653517ef6ba20a17232d55237c642b4b3188a19eda294aa"
 
       def install
         bin.install "flipt"
@@ -22,8 +22,8 @@ class Flipt < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/flipt-io/flipt/releases/download/v1.39.1/flipt_darwin_x86_64.tar.gz"
-      sha256 "7d31bf1b6afd2f13ea1ffd812040b5bc7b87929fb3a6ea11caaf8c292ab37c81"
+      url "https://github.com/flipt-io/flipt/releases/download/v1.39.2/flipt_darwin_x86_64.tar.gz"
+      sha256 "00c5dd1c2ccd968bbb263825ade00332e08edef994bcde8c5dcdb99f6ad8be95"
 
       def install
         bin.install "flipt"
@@ -37,8 +37,8 @@ class Flipt < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/flipt-io/flipt/releases/download/v1.39.1/flipt_linux_arm64.tar.gz"
-      sha256 "d30937c6e9ee4024365a9beef8c2a6bad80d2a4be305aedade7e42bce6352235"
+      url "https://github.com/flipt-io/flipt/releases/download/v1.39.2/flipt_linux_arm64.tar.gz"
+      sha256 "daff74a94e01d8e79dfc956b15630fddbba5bc24df09a12500e450a096af731b"
 
       def install
         bin.install "flipt"
@@ -49,8 +49,8 @@ class Flipt < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/flipt-io/flipt/releases/download/v1.39.1/flipt_linux_x86_64.tar.gz"
-      sha256 "38d7e4b5c3fb43f485fb361129d0bad7ad6c48a8a3684020de8e44c8194ac030"
+      url "https://github.com/flipt-io/flipt/releases/download/v1.39.2/flipt_linux_x86_64.tar.gz"
+      sha256 "5960a219eba649540aa8f88ecfb4ba9c125efebed7e49d18df330e6dbeaa5d46"
 
       def install
         bin.install "flipt"
