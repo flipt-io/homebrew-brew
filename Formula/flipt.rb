@@ -5,13 +5,13 @@
 class Flipt < Formula
   desc "An open source, self-hosted feature flag solution"
   homepage "https://flipt.io"
-  version "1.41.1"
+  version "1.41.2"
   license "GPL-3.0-only"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/flipt-io/flipt/releases/download/v1.41.1/flipt_darwin_x86_64.tar.gz"
-      sha256 "f7f70d3d9e6b62d896fab0377f5d8c6e0e16f3577db7b431991dc3494d5d43e5"
+    on_intel do
+      url "https://github.com/flipt-io/flipt/releases/download/v1.41.2/flipt_darwin_x86_64.tar.gz"
+      sha256 "9cdfa02afd189768388069b9120e65a01bb419e65453783ee748844cb94c702f"
 
       def install
         bin.install "flipt"
@@ -21,9 +21,9 @@ class Flipt < Formula
         (zsh_completion/"_flipt").write output
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/flipt-io/flipt/releases/download/v1.41.1/flipt_darwin_arm64.tar.gz"
-      sha256 "6a1199d9d703b96b0df6da6da0d3821f82596ed26ea004357ce084bd053320a2"
+    on_arm do
+      url "https://github.com/flipt-io/flipt/releases/download/v1.41.2/flipt_darwin_arm64.tar.gz"
+      sha256 "fae811da930a4140e3541354457aea83deb17825d559b10192a79bc82bec9e46"
 
       def install
         bin.install "flipt"
@@ -36,28 +36,32 @@ class Flipt < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/flipt-io/flipt/releases/download/v1.41.1/flipt_linux_x86_64.tar.gz"
-      sha256 "3a6d21252d00141cbd4ed2b5d0e5d44d3d687ba80e1de543abb06de5059b3879"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/flipt-io/flipt/releases/download/v1.41.2/flipt_linux_x86_64.tar.gz"
+        sha256 "907aa0bee5ddc3de758414c37eefe94bd987180c59e8e5f319dc7af3a68f4e3f"
 
-      def install
-        bin.install "flipt"
-        output = Utils.popen_read("SHELL=bash #{bin}/flipt completion bash")
-        (bash_completion/"flipt").write output
-        output = Utils.popen_read("SHELL=zsh #{bin}/flipt completion zsh")
-        (zsh_completion/"_flipt").write output
+        def install
+          bin.install "flipt"
+          output = Utils.popen_read("SHELL=bash #{bin}/flipt completion bash")
+          (bash_completion/"flipt").write output
+          output = Utils.popen_read("SHELL=zsh #{bin}/flipt completion zsh")
+          (zsh_completion/"_flipt").write output
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/flipt-io/flipt/releases/download/v1.41.1/flipt_linux_arm64.tar.gz"
-      sha256 "0165eee9836be33acd4cdd6e9477fc5e5e7ef0c8e272d8c1cdbf9a03b6ec531a"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/flipt-io/flipt/releases/download/v1.41.2/flipt_linux_arm64.tar.gz"
+        sha256 "87cd36419633a1963453deb4f38efaa21bea552256ae1ed1099d146374f6577f"
 
-      def install
-        bin.install "flipt"
-        output = Utils.popen_read("SHELL=bash #{bin}/flipt completion bash")
-        (bash_completion/"flipt").write output
-        output = Utils.popen_read("SHELL=zsh #{bin}/flipt completion zsh")
-        (zsh_completion/"_flipt").write output
+        def install
+          bin.install "flipt"
+          output = Utils.popen_read("SHELL=bash #{bin}/flipt completion bash")
+          (bash_completion/"flipt").write output
+          output = Utils.popen_read("SHELL=zsh #{bin}/flipt completion zsh")
+          (zsh_completion/"_flipt").write output
+        end
       end
     end
   end
