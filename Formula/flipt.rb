@@ -5,13 +5,13 @@
 class Flipt < Formula
   desc "Enterprise-ready, GitOps enabled, CloudNative feature management solution"
   homepage "https://flipt.io"
-  version "1.44.0"
+  version "1.45.0"
   license "GPL-3.0-only"
 
   on_macos do
     on_intel do
-      url "https://github.com/flipt-io/flipt/releases/download/v1.44.0/flipt_darwin_x86_64.tar.gz"
-      sha256 "b0726d0bcd2403d127e66dd366818acaac44db546c62c5a7ba519d0a388a3b05"
+      url "https://github.com/flipt-io/flipt/releases/download/v1.45.0/flipt_darwin_x86_64.tar.gz"
+      sha256 "dc3cc5dd3afad6dab1173487fea17346d95c9d36aab373c4142e70ccf13d6c04"
 
       def install
         bin.install "flipt"
@@ -22,8 +22,8 @@ class Flipt < Formula
       end
     end
     on_arm do
-      url "https://github.com/flipt-io/flipt/releases/download/v1.44.0/flipt_darwin_arm64.tar.gz"
-      sha256 "cfc961b6dcc3cd0b1a270e891daf7ce3467dd980cce9263f434ecbc09e87e9e7"
+      url "https://github.com/flipt-io/flipt/releases/download/v1.45.0/flipt_darwin_arm64.tar.gz"
+      sha256 "6522099966c9d0cad9fb0a00e380b365ab0dc7d81f272f1313edf0ee658d6ee7"
 
       def install
         bin.install "flipt"
@@ -38,8 +38,8 @@ class Flipt < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/flipt-io/flipt/releases/download/v1.44.0/flipt_linux_x86_64.tar.gz"
-        sha256 "48331d5a67e82c615a07a90f2917fefb78495bc12009563bec5af9e711d3868f"
+        url "https://github.com/flipt-io/flipt/releases/download/v1.45.0/flipt_linux_x86_64.tar.gz"
+        sha256 "5b5ad86b6ca7281281751e26b71e84c35fdf1530421319e6f72697b6f18fa24b"
 
         def install
           bin.install "flipt"
@@ -52,8 +52,8 @@ class Flipt < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/flipt-io/flipt/releases/download/v1.44.0/flipt_linux_arm64.tar.gz"
-        sha256 "df1ba6aff86a90333e5f421432f68d08ab2c45ddcecbe136149e874883e6ad41"
+        url "https://github.com/flipt-io/flipt/releases/download/v1.45.0/flipt_linux_arm64.tar.gz"
+        sha256 "94b28343982a34d33de3294f7d8ec20967dcbab7b4d43cc9975da17d40a691cc"
 
         def install
           bin.install "flipt"
