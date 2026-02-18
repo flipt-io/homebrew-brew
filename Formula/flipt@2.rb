@@ -5,13 +5,13 @@
 class FliptAT2 < Formula
   desc "A Git-first, CloudNative feature management solution"
   homepage "https://flipt.io"
-  version "2.6.0"
+  version "2.7.0"
   license "FCL-1.0-MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/flipt-io/flipt/releases/download/v2.6.0/flipt_darwin_x86_64.tar.gz"
-      sha256 "27f8b610abc2260cf7b2c2eddbf28b618535343cf7c50cc16b8f30f928f4de2e"
+      url "https://github.com/flipt-io/flipt/releases/download/v2.7.0/flipt_darwin_x86_64.tar.gz"
+      sha256 "6cfdbb487c5ea00350a1b4738c058c802fcda49ca66d6ce11da8b7d3651d23c5"
 
       def install
         bin.install "flipt"
@@ -22,8 +22,8 @@ class FliptAT2 < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/flipt-io/flipt/releases/download/v2.6.0/flipt_darwin_arm64.tar.gz"
-      sha256 "2286278891e7002b0716318d988cfdd5c7bac422b9cb6d7e7ccf12e16ed3c4a0"
+      url "https://github.com/flipt-io/flipt/releases/download/v2.7.0/flipt_darwin_arm64.tar.gz"
+      sha256 "5a307ce34c71e0f7e613f5443bd13079ef4caf8c71a7b2f734f72c8743831804"
 
       def install
         bin.install "flipt"
@@ -37,8 +37,8 @@ class FliptAT2 < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/flipt-io/flipt/releases/download/v2.6.0/flipt_linux_x86_64.tar.gz"
-      sha256 "ae5bf4f02cdde47e012ba80d88cb15b7ab22ce65ffe4cdc2379cdf7859a31f17"
+      url "https://github.com/flipt-io/flipt/releases/download/v2.7.0/flipt_linux_x86_64.tar.gz"
+      sha256 "a4834b1b20fc3fa7be6b77901142d6e893dc096d49003437331567bd842a3c0c"
       def install
         bin.install "flipt"
         output = Utils.popen_read("SHELL=bash #{bin}/flipt completion bash")
@@ -48,8 +48,8 @@ class FliptAT2 < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/flipt-io/flipt/releases/download/v2.6.0/flipt_linux_arm64.tar.gz"
-      sha256 "af51ead8111dde7ff179cd019ff82615995aaa8f7b8f87bcd01b10ba6416e9bd"
+      url "https://github.com/flipt-io/flipt/releases/download/v2.7.0/flipt_linux_arm64.tar.gz"
+      sha256 "44a62475f1cb50f8f8e58382b6951dd826a2d2541e3ad821bce9fce3f35880aa"
       def install
         bin.install "flipt"
         output = Utils.popen_read("SHELL=bash #{bin}/flipt completion bash")
