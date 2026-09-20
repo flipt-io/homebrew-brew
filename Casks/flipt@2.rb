@@ -3,7 +3,7 @@ cask "flipt@2" do
   name "flipt@2"
   desc "A Git-first, CloudNative feature management solution"
   homepage "https://flipt.io"
-  version "2.12.0"
+  version "2.13.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,22 +14,22 @@ cask "flipt@2" do
   on_macos do
     on_intel do
       url "https://github.com/flipt-io/flipt/releases/download/v#{version}/flipt_darwin_x86_64.tar.gz"
-      sha256 "991231447e6eeae88a66302bf78bafc2f43f8491da9e15a1a19b0bd39e7bf65b"
+      sha256 "755369a89a3f4adf2982a19bb2655b7620e64ead95319ddceadf00cad30b33eb"
     end
     on_arm do
       url "https://github.com/flipt-io/flipt/releases/download/v#{version}/flipt_darwin_arm64.tar.gz"
-      sha256 "b4a25fed7d57dd762763da71b2e25eacd49777abba2945af603a3a4b9e2c0c32"
+      sha256 "c7a935298f363170285553242bab30fa999695087350d64ba2390dd86da7458c"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/flipt-io/flipt/releases/download/v#{version}/flipt_linux_x86_64.tar.gz"
-      sha256 "90995fbe36afe16b112f0836648ba0d52340deead1f6c7bfdfed23d4e76a7cd2"
+      sha256 "c701751a28e0ffa6a5a0135917673becc435fedcb9b563d29a6ee754de019e45"
     end
     on_arm do
       url "https://github.com/flipt-io/flipt/releases/download/v#{version}/flipt_linux_arm64.tar.gz"
-      sha256 "cdf92aa7ce612f25aa30b1e17a4756abc0f75a8e4bd8137022bd16ba4287a20a"
+      sha256 "cbcb53cd9df9efb12774eb4eda7f2546f7f741e2ca3792d9cb42516bceabd056"
     end
   end
 
